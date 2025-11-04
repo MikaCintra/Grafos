@@ -1,0 +1,23 @@
+
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compilar Projeto (pacotes)",
+      "type": "shell",
+      "command": "$files = Get-ChildItem -Recurse -Path src/grafos,src/app -Filter *.java | ForEach-Object { $_.FullName }; & \"C:/Desenvolvedor/Tools/Java/bin/javac.exe\" -d bin -cp bin $files",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Executar app.Main",
+      "type": "shell",
+      "command": "& \"C:/Desenvolvedor/Tools/Java/bin/java.exe\" -cp bin app.Main",
+      "group": "none",
+      "problemMatcher": []
+    }
+  ]
+}
